@@ -1,0 +1,21 @@
+all:
+  children:
+    common:
+      children:
+        webservers:
+          hosts:
+            node[2:3]:
+          vars:
+            var1: "webserver"
+        dbservers:
+          hosts:
+            node4:
+            node5:
+              var1: "node5"
+          vars:
+            var1: "dbserver"
+    monitoring:
+      children:
+        webservers:
+        dbservers:
+
