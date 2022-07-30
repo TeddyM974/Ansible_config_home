@@ -1,0 +1,7 @@
+-name: premierPlayBook
+  hosts: all
+  remote_user: teddy
+  task: 
+  - name: testDebug
+    debug:
+      msg: {{" var1 "}}
