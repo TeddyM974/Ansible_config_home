@@ -9,7 +9,6 @@ all:
           hosts:
             node4:
             node5:
-              var1: "inventory node5"
     monitoring:
       children:
         webservers:
