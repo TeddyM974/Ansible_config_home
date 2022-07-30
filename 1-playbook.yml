@@ -1,7 +1,8 @@
--name: premierPlayBook
+- name: premierPlayBook
   hosts: all
   remote_user: teddy
-  task: 
+  become_user: yes
+  tasks: 
   - name: testDebug
     debug:
-      msg: {{" var1 "}}
+      msg: "{{ var1 }}"
