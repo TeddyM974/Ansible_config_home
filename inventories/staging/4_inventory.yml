@@ -1,0 +1,17 @@
+all:
+  children:
+    common:
+      children:
+        webservers:
+          hosts:
+            ratchet: 
+        dbservers:
+          hosts:
+            bumblebee:
+    monitoring:
+      children:
+        webservers:
+        dbservers:
+      
+
+
