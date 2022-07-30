@@ -3,6 +3,7 @@
 
 # servers
 192.168.0.62	bumblebee
+192.168.0.55	ratchet
 #
 #printers
 192.168.0.250	home-prt-01
