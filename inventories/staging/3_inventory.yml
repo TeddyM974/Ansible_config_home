@@ -4,11 +4,16 @@ all:
       children:
         webservers:
           hosts:
-            ratchet: 
+            node[2:3]:
         dbservers:
           hosts:
-            bumblebee:
+            node4:
+            node5:
     monitoring:
+      hosts: 
+        node6:
+        ratchet: 
+        bumblebee:
       children:
         webservers:
         dbservers:

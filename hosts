@@ -1,8 +1,0 @@
-#
-## google cloud vm-01
-[gcservers]
-vm-01 ansible_host=35.228.100.41
-
-
-[gcservers:vars]
-ansible_python_interpreter=/usr/bin/python3

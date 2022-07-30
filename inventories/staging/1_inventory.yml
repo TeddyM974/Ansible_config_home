@@ -1,0 +1,29 @@
+all:
+  children:
+    LinuxUbuntuDebianCommon:
+      children:
+        mentdbservers:
+          hosts:
+            bumblebee:
+              var1: "bumblebee"
+          vars:
+            var1: "groupe mentdbservers"
+        webservers:
+          hosts:
+          vars:
+            var1: "groupe webservers"
+        dbservers:
+          hosts:
+          vars:
+            var1: "groupe dbservers"
+        fileservers:
+          hosts:
+          vars:
+            var1: "groupe fileservers"
+ 
+    monitoring:
+      children:
+        fileservers:
+        dbservers:
+        wbservers: 
+        mentdbservers:
