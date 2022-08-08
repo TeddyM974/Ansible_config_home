@@ -5,11 +5,12 @@
 #  become_user: yes
 
   tasks: 
-  - name: création de xavki
+  - name: création de user-ansible
     user:
       name: user-ansible
       state: present
       uid: 1200
+      shell: /bin/bash 
       groups: sudo
       append: yes
       password: "{{ 'Ansibl30' | password_hash('sha512') }}"  
