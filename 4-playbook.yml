@@ -1,0 +1,19 @@
+- name: premierPlayBookTestModuleFile
+  hosts: all
+  remote_user: teddy
+  become: yes
+#  become_user: yes
+
+  tasks: 
+  - name: création de xavki
+    user:
+      name: user-ansible
+      state: present
+      uid: 1200
+      groups: sudo
+      append: yes
+      password: "{{ 'Ansibl30' | password_hash('sha512') }}"  
+
+    
+   
+  

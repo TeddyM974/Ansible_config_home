@@ -1,0 +1,13 @@
+all:
+  children:
+    common:
+      children:
+        webservers:
+          hosts:
+            ratchet: 
+    monitoring:
+      children:
+        webservers:
+      
+
+
