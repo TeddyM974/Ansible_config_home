@@ -1,0 +1,19 @@
+- name: installation de mentdb 
+  hosts: all
+  remote_user: teddy
+  become: yes
+
+  tasks: 
+  - name: création de user-mentdb
+    user:
+      name: user-mentdb
+      state: present
+      uid: 1500
+      shell: /bin/bash 
+      groups: sudo
+      append: yes
+      password: "{{ 'Men55tdbl30' | password_hash('sha512') }}"  
+
+    
+   
+  

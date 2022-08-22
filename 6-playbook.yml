@@ -1,4 +1,4 @@
-- name: création d'un utilisateur
+- name: test module stat et register
   hosts: all
   remote_user: teddy
   become: yes
