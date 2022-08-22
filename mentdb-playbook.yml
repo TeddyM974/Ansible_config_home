@@ -16,4 +16,9 @@
 
     
    
-  
+  - name: mise à jour du cache apt  et install htop
+    apt:
+      name: htop
+      update_cache: yes
+      cache_valid_time: 3600
+      state: latest   

@@ -1,20 +1,27 @@
 - name: test module stat et register
   hosts: all
   remote_user: teddy
-  become: yes
+#  become: yes
 #  become_user: yes
 
   tasks: 
-  - name: création de user-ansible
-    user:
-      name: user-ansible
-      state: present
-      uid: 1200
-      shell: /bin/bash 
-      groups: sudo
-      append: yes
-      password: "{{ 'Ansibl30' | password_hash('sha512') }}"  
-
-    
-   
+  - name: création dun fichier
+    file:
+      path: /home/teddy/test.txt
+      state: touch
+      mode: 0755  
+ 
+  - name: test de stat
+    stat: 
+      path: /home/teddy/test.txt
+    register: var_stat_output
   
+  - name: affichage stat
+    debug: 
+      msg: "le fichier existe  ? {{var_stat_output.stat.exists}}"
+
+  - name : création dun repertoir si existance du fichier
+    file: 
+      path: /home/teddy/testfolder
+      state: directory
+    when : var_stat_output.stat.exists == true
