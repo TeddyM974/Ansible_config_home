@@ -1,0 +1,16 @@
+- name: test  boucle module stat et register
+  hosts: all
+  remote_user: teddy
+#  become: yes
+#  become_user: yes
+
+  tasks: 
+  - name: création des repertoires 
+    file:
+      state: directory
+      path: "/home/teddy/{{ item }}"
+      recurse: yes
+    with_items: 
+    - folder1
+    - folder2
+    - folder3 
