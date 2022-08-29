@@ -1,0 +1,22 @@
+- name: test  module apt
+  hosts: all
+  remote_user: teddy
+  become: yes
+#  become_user: yes
+
+  tasks: 
+ 
+  - name: mise à jour du cache et install mysql-server
+    apt:
+      name : mysql-server
+      update_cache : yes
+      cache_valid_time : 3600
+      force : yes
+
+
+  - name: mise à jour du cache et install mysql-client
+    apt:
+      name : mysql-client
+      update_cache : yes
+      cache_valid_time : 3600
+      force : yes

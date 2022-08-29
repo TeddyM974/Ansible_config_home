@@ -4,11 +4,14 @@ all:
       children:
         webservers:
           hosts:
-            astl-mentdb-01: 
             ratchet: 
+        dbservers:
+          hosts:
+            bumblebee:
     monitoring:
       children:
         webservers:
+        dbservers:
       
 
 

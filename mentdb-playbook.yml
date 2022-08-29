@@ -1,6 +1,6 @@
 - name: installation de mentdb 
-  hosts: all
-  remote_user: teddy
+  hosts: astl-mentdb-01
+  remote_user: exoadmin
   become: yes
 
   tasks: 
@@ -16,9 +16,28 @@
 
     
    
+  - name: mise à jour du cache apt  et install vim
+    apt:
+      name: vim
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: mise à jour du cache apt  et install tmux 
+    apt:
+      name: tmux
+      update_cache: yes
+      cache_valid_time: 3600
+
+
   - name: mise à jour du cache apt  et install htop
     apt:
       name: htop
       update_cache: yes
       cache_valid_time: 3600
-      state: latest   
+
+
+  - name: mise à jour du cache et install mysql
+    apt:
+      name : mysql-server
+      update_cache : yes
+      force : yes

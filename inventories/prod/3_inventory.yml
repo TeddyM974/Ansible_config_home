@@ -1,0 +1,22 @@
+all:
+  children:
+    common:
+      children:
+        webservers:
+          hosts:
+            node[2:3]:
+        dbservers:
+          hosts:
+            node4:
+            node5:
+    monitoring:
+      hosts: 
+        node6:
+        ratchet: 
+        bumblebee:
+      children:
+        webservers:
+        dbservers:
+      
+
+

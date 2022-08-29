@@ -12,3 +12,13 @@
   - name: Install Python
     raw: apt -y update && apt install -y python-minimal
     when: check_python.rc != 0
+
+  - name: mise à jour du cache et install htop
+    apt:
+      name : htop
+      update_cache : yes
+      cache_valid_time : 3600
+ 
+# tmux, vim, git
+# user-mentb , user-ansible 
+# queen-mona -> user-jail
