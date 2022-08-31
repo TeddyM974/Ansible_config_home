@@ -1,0 +1,16 @@
+- name: test génération de la cle ssh 
+  hosts: all
+  remote_user: teddy.morel
+  become: yes
+#  become_user: yes
+
+  tasks: 
+  - name: génération de la clef
+    openssh_keypair:
+      path: "/tmp/"
+      type: ed25519
+      size: 4096
+      state: present
+      force: no 
+    delegate_to: localhost
+    run_once: yes
