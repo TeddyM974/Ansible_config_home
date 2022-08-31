@@ -2,14 +2,9 @@ all:
   children:
     common:
       children:
-        webserver:
+        mentdbservers:
           hosts:
-            node[1-2]:
-        dbserver:
-          hosts:
-            srv[3-4]:
+            mona-dev-02:
     monitoring:
       children:
-        webserver:
-        dbserver:
-
+        mentdbservers:
