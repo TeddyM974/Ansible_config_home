@@ -2,13 +2,9 @@ all:
   children:
     common:
       children:
-        webservers:
+        mentdbservers:
           hosts:
-            astl-mentdb-01: 
-            ratchet: 
+            mona-dev-02:
     monitoring:
       children:
-        webservers:
-      
-
-
+        mentdbservers:
