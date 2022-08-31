@@ -1,0 +1,30 @@
+- name: test génération de la cle ssh 
+  hosts: all
+  remote_user: teddy.morel
+#  become: yes
+#  become_user: yes
+
+  tasks: 
+  - name: génération de la clef
+    openssh_keypair:
+      path: "/home/teddy/.ssh/id_ed25519_user-ansible"
+      type: ed25519
+      size: 4096
+      state: present
+      force: no 
+    delegate_to: localhost
+    run_once: yes
+  
+  - name: add user-ansible to sudoers
+    copy: 
+      dest: "/etc/sudoers.d/user-ansible"
+      content: "user-ansible ALL=(ALL) NOPASSWD:ALL"
+    become: yes
+
+  - name: déploiement de la clé
+    authorized_key:
+      user: user-ansible
+      key: "{{ lookup('file', '/home/teddy/.ssh/id_ed25519_user-ansible.pub') }}"
+      state: present
+    become: yes
+
