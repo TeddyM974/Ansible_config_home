@@ -24,7 +24,7 @@
   - name: déploiement de la clé
     authorized_key:
       user: user-ansible
-      key: "{{ lookup('file', '/home/teddy/.ssh/id_ed25519_user-ansible') }}"
+      key: "{{ lookup('file', '/home/teddy/.ssh/id_ed25519_user-ansible.pub') }}"
       state: present
     become: yes
 
