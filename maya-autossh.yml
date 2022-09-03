@@ -1,6 +1,6 @@
 - name: install et conf autossh 
-  hosts: teddy
-  remote_user: user-ansible
+  hosts: ratchet
+  remote_user: teddy
   become: yes
 
   tasks: 
