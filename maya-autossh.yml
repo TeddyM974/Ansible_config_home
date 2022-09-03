@@ -1,5 +1,5 @@
 - name: install et conf autossh 
-  hosts: ratchet
+  hosts: teddy
   remote_user: user-ansible
   become: yes
 
