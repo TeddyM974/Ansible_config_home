@@ -1,0 +1,13 @@
+- name: install et conf autossh 
+  hosts: ratchet
+  remote_user: user-ansible
+  become: yes
+
+  tasks: 
+  - name: install autossh 
+    apt:
+      update_cache : yes
+      cache_valid_time : 3600
+      name :
+        - autossh
+ 
