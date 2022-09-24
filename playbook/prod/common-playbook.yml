@@ -34,6 +34,16 @@
       append: yes
       password: "{{ 'Ansibl30' | password_hash('sha512') }}"  
 
+  - name: création de la paire de cle ssh pour  user-ansible
+    openssh_keypair:
+      path: "/home/user-ansible/.ssh/id_ed25519"
+      type: ed25519
+      size: 4096
+      state: present
+      force: no 
+ 
+
+
   - name: création de user-mentdb
     user:
       name: user-mentdb
