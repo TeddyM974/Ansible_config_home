@@ -10,4 +10,7 @@
       cache_valid_time : 3600
       name :
         - autossh
- 
+# faire la génération de la clé public du 
+
+
+# le configurer pour qu'il lance automatiquement  
