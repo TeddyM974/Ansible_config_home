@@ -1,0 +1,10 @@
+- name: PlayBook commun pour tout serveur linux ubuntu
+  hosts: all
+  remote_user: user-ansible
+  become: yes
+  tasks: 
+  - name: mise à jour du cache et upgrade  
+    apt:
+      update_cache : yes
+      cache_valid_time : 3600
+      upgrade : yes 

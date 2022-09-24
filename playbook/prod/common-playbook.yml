@@ -1,6 +1,6 @@
 - name: PlayBook commun pour tout serveur linux ubuntu
   hosts: all
-  remote_user: teddy.morel
+  remote_user: teddy
   become: yes
   tasks: 
 #  - name: Check for Python
@@ -46,6 +46,3 @@
 
   
   
-# tmux, vim, git
-# user-mentb , user-ansible 
-# queen-mona -> user-jail
